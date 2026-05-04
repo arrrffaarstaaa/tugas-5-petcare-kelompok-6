@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produk 4</title>
+
+  <!-- Bootstrap & Icon -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+
+     /* Navbar */
+    .navbar {
+     background-color: #c2afec;
+    }
+
+    .navbar-brand, .nav-link {
+      color: rgb(74, 30, 195) !important;
+      font-weight: 700;
+    }
+
+    .nav-link:hover {
+      text-decoration: underline;
+    }
+
+
+    @keyframes fadeSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-title {
+  animation: fadeSlideDown 1s ease;
+}
+
+.animate-text {
+  animation: fadeSlideUp 1.2s ease;
+}
+
+.animate-btn {
+  animation: fadeSlideUp 1.4s ease;
+}
+
+/* Hover tombol */
+.btn-main {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-main::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.2);
+  top: 0;
+  left: -100%;
+  transition: 0.4s;
+}
+
+.btn-main:hover::after {
+  left: 100%;
+}
+
+    body {
+      background: #f2f4f7;
+      font-family: sans-serif;
+    }
+
+    /* Card Produk */
+    .product-card {
+      background: #fff;
+      border-radius: 25px; 
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+
+    .product-img {
+      background: #eee;
+      border-radius: 15px;
+      padding: 20px;
+    }
+
+    .product-img img {
+      width: 120px;
+    }
+
+    .stars {
+      color: gold;
+      font-size: 18px;
+    }
+
+    .price {
+      color: #198754;
+      font-weight: bold;
+      font-size: 22px;
+    }
+
+    .btn-main {
+      background: #1e6be3;
+      border: none;
+      border-radius: 15px;
+      padding: 12px;
+      color: white;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn-main:hover {
+      background: #155bcc;
+      transform: scale(1.03);
+    }
+
+    .badge-discount {
+      background: #dc3545;
+      padding: 6px 12px;
+      border-radius: 10px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+
+   <!-- AOS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top mb-3">
+  <div class="container">
+    <a class="navbar-brand text-white fw-bold" href="#">
+      <img src="ASSET/logo.png" alt="logo" width="20" class="d-inline-block align-items-center">
+      Fluffy-House
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="./index.html#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="./index.html#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="./index.html#produk">Produk</a></li>
+        <li class="nav-item"><a class="nav-link" href="./index.html#testi">Testimoni</a></li>
+        <li class="nav-item"><a class="nav-link" href="./index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<br>
+
+  <section class="py-5 mb-3 text-center" style="background: linear-gradient(135deg, #e8d5ea, #752d9e); color: white;">
+  <div class="container">
+
+    <h1 class="fw-bold mb-3 animate-title">
+      <i class="bi bi-shop"></i> Produk Mainan Petshop Kami
+    </h1>
+
+    <p class="mb-4 animate-text">
+      Temukan berbagai pilihan mainan kucing interaktif yang dapat merangsang insting berburu dan membuat kucing lebih aktif dan bahagia.
+    </p>
+
+    <a href="#buy" class="btn btn-light px-4 py-2 fw-bold animate-btn">
+      <i class="bi bi-cart"></i> Belanja Sekarang
+    </a>
+
+  </div>
+</section>
+
+<div class="container py-4" id="buy">
+  <div class="row g-4">
+
+    <!-- CARD 1 -->
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+      <div class="product-card">
+        <div class="product-img mb-3">
+          <img src="ASSET/41.jpg">
+        </div>
+        <h5 class="fw-bold">Bola Bulu Lonceng Kucing</h5>
+        <div class="stars">★★★★</div>
+        <div class="price">Rp18.000</div>
+        <p class="text-muted"><s>Rp20.000</s></p>
+        <span class="badge-discount">Diskon 10%</span>
+        <button class="btn-main w-100 mt-3">
+          <i class="bi bi-cart"></i> Beli Sekarang </button>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+      <div class="product-card">
+        <div class="product-img mb-3">
+          <img src="ASSET/42.jpg">
+        </div>
+        <h5 class="fw-bold">Tongkat Mainan Bulu Kucing</h5>
+        <div class="stars">★★★★</div>
+        <div class="price">Rp10.000</div>
+        <p class="text-muted"><s>Rp8.500</s></p>
+        <span class="badge-discount">Diskon 15%</span>
+        <button class="btn-main w-100 mt-3">
+          <i class="bi bi-cart"></i> Beli Sekarang </button>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+      <div class="product-card">
+        <div class="product-img mb-3">
+          <img src="ASSET/43.jpg">
+        </div>
+        <h5 class="fw-bold">Laser Pointer Kucing</h5>
+        <div class="stars">★★★★★</div>
+        <div class="price">Rp40.000</div>
+        <p class="text-muted"><s>Rp50.000 </s></p>
+        <span class="badge-discount">Diskon 20%</span>
+        <button class="btn-main w-100 mt-3">
+          <i class="bi bi-cart"></i> Beli Sekarang </button>
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+      <div class="product-card">
+        <div class="product-img mb-3">
+          <img src="ASSET/44.jpg">
+        </div>
+        <h5 class="fw-bold">Smart Bola Otomatis Kucing</h5>
+        <div class="stars">★★★★</div>
+        <div class="price">Rp108.000</div>
+        <p class="text-muted"><s>Rp.120.000</s></p>
+        <span class="badge-discount">Diskon 10%</span>
+        <button class="btn-main w-100 mt-3">
+          <i class="bi bi-cart"></i> Beli Sekarang </button>
+      </div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+      <div class="product-card">
+        <div class="product-img mb-3">
+          <img src="ASSET/45.jpg">
+        </div>
+        <h5 class="fw-bold">Turntable Cat Toy</h5>
+        <div class="stars">★★★★</div>
+        <div class="price">Rp132.000</div>
+        <p class="text-muted"><s>Rp150.000</s></p>
+        <span class="badge-discount">Diskon 12%</span>
+        <button class="btn-main w-100 mt-3">
+          <i class="bi bi-cart"></i> Beli Sekarang </button>
+      </div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
+      <div class="product-card">
+        <div class="product-img mb-3">
+          <img src="ASSET/46.jpg">
+        </div>
+        <h5 class="fw-bold">Catnip Balls</h5>
+        <div class="stars">★★★★</div>
+        <div class="price">Rp27.000</div>
+        <p class="text-muted"><s>Rp.30.000</s></p>
+        <span class="badge-discount">Diskon 10%</span>
+        <button class="btn-main w-100 mt-3">
+          <i class="bi bi-cart"></i> Beli Sekarang </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer class="text-center py-3" style="background: #c2afec; color:rgb(74, 30, 195); border-top: 3px solid #c2afec;">
+  <small>
+    © 2026 fluffyidd | All Rights Reserved
+  </small>
+</footer>
+
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1200,
+    once: true,
+    easing: 'ease-in-out',
+  });
+</script>
+
+</body>
+</html>

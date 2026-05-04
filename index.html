@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fluffy-House Pet Shop</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #c2afec;
+    }
+
+    .navbar-brand, .nav-link {
+      color: rgb(74, 30, 195) !important;
+      font-weight: 700;
+    }
+
+    .nav-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #e8d5ea, #752d9e); color: white;
+      padding: 150px 0;
+      text-align: center;
+    }
+
+    .btn-custom {
+      background-color: #fbf9fb;
+      color: rgb(74, 30, 195) !important;
+      transition: 0.3s;
+    }
+
+    body {
+      background: linear-gradient(135deg, #eae0e6, #f1f2da);
+      font-family: sans-serif;
+    }
+
+    .about-img {
+  transition: 0.4s;
+}
+.about-img:hover {
+  transform: scale(1.05) rotate(1deg);
+}
+
+.list-animate li {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: fadeList 0.5s forwards;
+}
+
+.list-animate li:nth-child(1) { animation-delay: 0.2s; }
+.list-animate li:nth-child(2) { animation-delay: 0.4s; }
+.list-animate li:nth-child(3) { animation-delay: 0.6s; }
+.list-animate li:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes fadeList {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Tombol animasi */
+.btn-anim {
+  transition: 0.3s;
+}
+.btn-anim:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+    /* Card Produk */
+    .product-card {
+      background: #fff;
+      border-radius: 25px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+
+    .product-img {
+      background: #eee;
+      border-radius: 15px;
+      padding: 20px;
+    }
+
+    .product-img img {
+      width: 120px;
+    }
+
+
+
+    .btn-main {
+      background: #c2afec;
+      border: none;
+      border-radius: 15px;
+      padding: 12px;
+      color: white;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn-main:hover {
+      background: #41175c;
+      transform: scale(1.03);
+    }
+
+    .testimonial-card {
+      background: #f0f0f0;
+      border-radius: 20px;
+      padding: 20px;
+      height: 100%;
+      position: relative;
+    }
+
+    .testimonial-card img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .stars {
+      color: #f4b400;
+      font-size: 14px;
+    }
+
+    .quote {
+      position: absolute;
+      bottom: 15px;
+      right: 20px;
+      font-size: 30px;
+      color: #cfd8dc;
+    }
+
+
+  .testimonial-card {
+    background: #faf9fa;
+    border-radius: 20px;
+    padding: 20px;
+    height: 100%;
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  /* 🔥 Hover effect */
+  .testimonial-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    background: #ebddea;
+  }
+
+  .testimonial-card img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: 0.3s;
+  }
+
+  /* zoom foto */
+  .testimonial-card:hover img {
+    transform: scale(1.1);
+  }
+
+  .stars {
+    color: #f4b400;
+    font-size: 14px;
+  }
+
+  .quote {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    font-size: 30px;
+    color: #846d8e;
+    transition: 0.3s;
+  }
+
+  /* animasi quote */
+  .testimonial-card:hover .quote {
+    transform: scale(1.3) rotate(10deg);
+    color: #bca8d4;
+  }
+
+  /* animasi muncul saat load */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 0.8s ease forwards;
+  }
+
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* delay biar muncul satu-satu */
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.2s; }
+  .delay-3 { animation-delay: 0.3s; }
+  .delay-4 { animation-delay: 0.4s; }
+  .delay-5 { animation-delay: 0.5s; }
+  .delay-6 { animation-delay: 0.6s; }
+  .delay-7 { animation-delay: 0.7s; }
+  .delay-8 { animation-delay: 0.8s; }
+
+  
+  .footer {
+    background: #c2afec;
+    color: #0e0e0e;
+  }
+
+  /* animasi muncul */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s ease forwards;
+  }
+
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* hover link */
+  .footer a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  .footer a:hover {
+    color: #0d6efd;
+    padding-left: 5px;
+  }
+
+  /* icon efek */
+  .social-icon {
+    font-size: 20px;
+    margin-right: 10px;
+    transition: 0.3s;
+  }
+
+  .social-icon:hover {
+    transform: scale(1.3) rotate(5deg);
+    color: #0d6efd;
+  }
+
+  /* glow effect */
+  .footer h5, .footer h6 {
+    transition: 0.3s;
+  }
+
+  .footer h5:hover, .footer h6:hover {
+    color: #0d6efd;
+    text-shadow: 0 0 10px #0d6efd;
+  }
+
+
+
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand text-white fw-bold" href="#">
+      <img src="ASSET/logo.png" alt="logo" width="30" class="d-inline-block align-items-center">
+      Fluffy-House
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#produk">Produk</a></li>
+        <li class="nav-item"><a class="nav-link" href="#testi">Testimoni</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home" style="margin-top:70px;">
+  <div class="container text-white" data-aos="fade-up">
+    <h1><b>Fluffy House PatShop</b> </h1>
+    
+    <p class="mb-4 animate-text">
+      Temukan berbagai kebutuhan hewan peliharaan terbaik mulai dari makanan, 
+      kandang, mainan hingga perlengkapan kebersihan dengan kualitas terbaik dan harga terjangkau.
+    </p>
+    
+    <a href="#produk" class="btn btn-custom btn-lg">Belanja Sekarang</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="py-5" style="background: #cec1d1;">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- Gambar -->
+      <div class="col-md-6 mb-4" data-aos="fade-right">
+        <img src="ASSET/bg.jpg" class="img-fluid rounded-4 shadow about-img" alt="Petshop">
+      </div>
+
+      <!-- Teks -->
+      <div class="col-md-6" data-aos="fade-left">
+        <h2 class="fw-bold mb-3">
+          <i class="bi bi-shop"></i> Tentang Toko Kami
+        </h2>
+
+        <p class="text-muted">
+          Fluffy-House adalah toko petshop yang menyediakan berbagai kebutuhan hewan peliharaan 
+          seperti makanan, kandang, mainan, hingga perlengkapan kebersihan dan kesehatan.
+        </p>
+
+        <p class="text-muted">
+          Kami berkomitmen memberikan produk berkualitas dengan harga terjangkau serta pelayanan terbaik.
+        </p>
+
+        <!-- List -->
+        <ul class="list-unstyled mt-4 list-animate">
+          <li><i class="bi bi-check-circle-fill text-success"></i> Produk Berkualitas</li>
+          <li><i class="bi bi-check-circle-fill text-success"></i> Harga Terjangkau</li>
+          <li><i class="bi bi-check-circle-fill text-success"></i> Pelayanan Ramah</li>
+          <li><i class="bi bi-check-circle-fill text-success"></i> Banyak Pilihan Produk</li>
+        </ul>
+
+        <a href="#produk" class="btn btn-primary mt-3 px-4 btn-anim">
+          <i class="bi bi-shop"></i> Lihat Produk
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="about" class="py-5">
+  <div class="container text-center" data-aos="fade-up">
+    <h3 class="text-center fw-bold" id="produk"><b>Produk Tersedia</b></h3>
+    <br>
+
+<div class="container py-4">
+  <div class="row g-4">
+
+    <!-- CARD 1 -->
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+      <div class="product-card">
+        <div class="product-img mb-3">
+          <img src="ASSET/makanan.jpg">
+        </div>
+        <h5 class="fw-bold">Makanan Kucing & Anjing</h5>
+        
+        <br>
+        
+        <p class="text-muted">Produk makanan yang berkualitas mengandung nutrisi lengkap untuk mendukung pertumbuhan, energi, serta menjaga kesehatan hewan secara keseluruhan. Oleh karena itu kami menyediakan yang terbaik.</p>
+        <button class="btn-main w-100 mt-3 text-white"><a href="produk1.html">
+          <span>Lihat Produk</span>
+        </a></button>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+      <div class="product-card">
+        <div class="product-img mb-3">
+          <img src="ASSET/bersih.jpg">
+        </div>
+        <h5 class="fw-bold">Peralatan Mandi & Kesehatan</h5>
+        
+        <br>
+
+        <p class="text-muted">Produk ini membantu menjaga kebersihan tubuh dan kesehatan hewan, seperti shampoo, sisir, hingga obat ringan. Perawatan rutin sangat penting agar hewan tetap bersih, sehat, dan terhindar dari penyakit.</p>
+         <button class="btn-main w-100 mt-3 text-white"><a href="produk2.html">
+          <span>Lihat Produk</span>
+        </a></button>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+      <div class="product-card">
+        <div class="product-img mb-3">
+          <img src="ASSET/kandang.jpg">
+        </div>
+        <h5 class="fw-bold">Kandang Portable</h5>
+        
+        <br>
+
+        <p class="text-muted">Kandang portabel memudahkan pemilik dalam membawa atau menempatkan hewan dengan aman saat bepergian. Desainnya yang praktis dan nyaman membantu menjaga keamanan serta kenyamanan hewan.</p>
+         <button class="btn-main w-100 mt-3 text-white"><a href="produk3.html">
+          <span>Lihat Produk</span>
+        </a></button>
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+      <div class="product-card">
+        <div class="product-img mb-3">
+          <img src="ASSET/mainan.jpg">
+        </div>
+        <h5 class="fw-bold">Mainan Anabul</h5>
+        
+        <br>
+
+        <p class="text-muted">Sebagai sarana hiburan sekaligus melatih aktivitas fisik dan mental hewan. Dengan bermain, hewan menjadi lebih aktif, tidak mudah stres, dan memiliki perilaku yang lebih baik.</p>
+         <button class="btn-main w-100 mt-3 text-white"><a href="produk4.html">
+          <span>Lihat Produk</span>
+        </a></button>
+      </div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+      <div class="product-card">
+        <div class="product-img mb-3">
+          <img src="ASSET/pasir.jpg">
+        </div>
+        <h5 class="fw-bold">Pasir</h5>
+        
+        <br>
+
+        <p class="text-muted">Digunakan untuk menjaga kebersihan area buang kotoran. Pasir yang baik mampu menyerap bau dan cairan dengan efektif, sehingga lingkungan tetap bersih dan nyaman.</p>
+         <button class="btn-main w-100 mt-3 text-white"><a href="produk5.html">
+          <span>Lihat Produk</span>
+        </a></button>
+      </div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
+      <div class="product-card">
+        <div class="product-img mb-3">
+          <img src="ASSET/tempat.jpg">
+        </div>
+        <h5 class="fw-bold">Tempat Makan</h5>
+        
+        <br>
+
+        <p class="text-muted">Membantu menjaga kebersihan dan keteraturan saat hewan peliharaan makan. Dengan wadah yang tepat, makanan tetap higienis dan tidak mudah tercecer, sehingga kesehatan hewan lebih terjaga.</p>
+         <button class="btn-main w-100 mt-3 text-white"><a href="produk6.html">
+          <span>Lihat Produk</span>
+        </a></button>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+ <br>
+
+ <section id="about" class="py-5">
+  <div class="container text-center" data-aos="fade-up">
+    <h3 class="text-center fw-bold" id="testi"><b>Testimoni Pembeli</b></h3>
+    <br>
+
+  <div class="container py-5">
+  <div class="row g-4">
+
+    <!-- CARD 1 -->
+    <div class="col-lg-3 col-md-6 fade-up delay-1 data-aos="zoom-in" data-aos-delay="200">
+      <div class="testimonial-card">
+        <div class="d-flex align-items-center mb-3">
+          <img src="ASSET/1.jpg">
+          <div class="ms-3">
+            <h6 class="mb-0 fw-bold">EXO</h6>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <p>Macam-macam varian produknya sangat banyak dan kualitas tidak mengecewakan, saya sangat suka.</p>
+        <div class="quote">”</div>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="col-lg-3 col-md-6 fade-up delay-2 data-aos="zoom-in" data-aos-delay="200">
+      <div class="testimonial-card">
+        <div class="d-flex align-items-center mb-3">
+          <img src="ASSET/2.jpg">
+          <div class="ms-3">
+            <h6 class="mb-0 fw-bold">NCT</h6>
+            <div class="stars">★★★</div>
+          </div>
+        </div>
+        <p>Harga cukup terjangkau dengan kualitas terbaik. Recommended banget untuk pecinta hewan!.</p>
+        <div class="quote">”</div>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="col-lg-3 col-md-6 fade-up delay-3 data-aos="zoom-in" data-aos-delay="200">
+      <div class="testimonial-card">
+        <div class="d-flex align-items-center mb-3">
+          <img src="ASSET/3.jpg">
+          <div class="ms-3">
+            <h6 class="mb-0 fw-bold">SEVENTEEN</h6>
+            <div class="stars">★★★★</div>
+          </div>
+        </div>
+        <p>Banyak pilihan aksesoris lucu dan unik untuk hewan peliharaan. Jadi betah belanja disini.</p>
+        <div class="quote">”</div>
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="col-lg-3 col-md-6 fade-up delay-4 data-aos="zoom-in" data-aos-delay="200">
+      <div class="testimonial-card">
+        <div class="d-flex align-items-center mb-3">
+          <img src="ASSET/4.jpg">
+          <div class="ms-3">
+            <h6 class="mb-0 fw-bold">ENHYPEN</h6>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <p>Petshop favorit saya! Selalu jadi langganan karena kualitas tinggi dan konsisten.</p>
+        <div class="quote">”</div>
+      </div>
+    </div>
+
+    <!-- ROW 2 -->
+
+    <!-- CARD 5 -->
+    <div class="col-lg-3 col-md-6 fade-up delay-5 data-aos="zoom-in" data-aos-delay="200">
+      <div class="testimonial-card">
+        <div class="d-flex align-items-center mb-3">
+          <img src="ASSET/5.jpg">
+          <div class="ms-3">
+            <h6 class="mb-0 fw-bold">TWICE</h6>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <p>Sudah beberapa kali berbrlanja di sini dan selalu puas. Recommended banget.</p>
+        <div class="quote">”</div>
+      </div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="col-lg-3 col-md-6 fade-up delay-6 data-aos="zoom-in" data-aos-delay="200">
+      <div class="testimonial-card">
+        <div class="d-flex align-items-center mb-3">
+          <img src="ASSET/6.jpg">
+          <div class="ms-3">
+            <h6 class="mb-0 fw-bold">GFRIEND</h6>
+            <div class="stars">★★★★</div>
+          </div>
+        </div>
+        <p>Produknya sesuai deskripsi dan kualitasnya bagus. Sangat puas belanja disini.</p>
+        <div class="quote">”</div>
+      </div>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="col-lg-3 col-md-6 fade-up delay-7 data-aos="zoom-in" data-aos-delay="200">
+      <div class="testimonial-card">
+        <div class="d-flex align-items-center mb-3">
+          <img src="ASSET/7.jpg">
+          <div class="ms-3">
+            <h6 class="mb-0 fw-bold">RED VELVET</h6>
+            <div class="stars">★★★★</div>
+          </div>
+        </div>
+        <p>Customer service sangat ramah dan membantu. Semua pertanyaan dijawab dengan jelas.</p>
+        <div class="quote">”</div>
+      </div>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="col-lg-3 col-md-6 fade-up delay-8 data-aos="zoom-in" data-aos-delay="200">
+      <div class="testimonial-card">
+        <div class="d-flex align-items-center mb-3">
+          <img src="ASSET/8.jpg">
+          <div class="ms-3">
+            <h6 class="mb-0 fw-bold">AESPA</h6>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <p>Banyak pilihan produk menarik. Jadi gampang cari kebutuhan tanpa harus pindah toko</p>
+        <div class="quote">”</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<footer class="footer pt-5 pb-3" id="contact">
+  <div class="container">
+    <div class="row">
+
+      <!-- Brand -->
+      <div class="col-md-4 mb-4 fade-up">
+        <h5 class="fw-bold">Fluffy House Petshop</h5>
+        <p>Toko online terpercaya dengan produk berkualitas dengan harga terbaik.</p>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-md-4 mb-4 fade-up" style="animation-delay: 0.3s;">
+        <h6 class="fw-bold">Contact</h6>
+        <p><i class="bi bi-envelope-fill social-icon"></i> fluffyidd@gmail.com </p>
+        <p><i class="bi bi-whatsapp social-icon"></i> 0813-9654-6780 </p>
+        <p><i class="bi bi-geo-alt-fill social-icon"></i>  JL.Furab No.56 Seoul</p>
+      </div>
+
+      <!-- Social -->
+      <div class="col-md-4 mb-4 fade-up" style="animation-delay: 0.6s;">
+        <h6 class="fw-bold">Follow Us</h6>
+        <p>
+          <i class="bi bi-instagram social-icon"></i> Instagram <b>@fluffyhouse_petshop</b> <br>
+          <i class="bi bi-tiktok social-icon"></i> TikTok <b>@fluffyhouse.id</b> <br>
+          <i class="bi bi-bag social-icon"></i> Shopee <b>@FLUFFY PETSHOP</b>
+        </p>
+      </div>
+
+    </div>
+
+    <hr class="border-secondary">
+
+    <div class="text-center fade-up" style="animation-delay: 0.9s;">
+      <p class="mb-0">&copy; 2026 FluffyHouseShop. All rights reserved.</p>
+    </div>
+  </div>
+</footer>  
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+</body>
+</html>
